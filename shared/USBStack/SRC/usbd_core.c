@@ -360,6 +360,9 @@ __inline BOOL USBD_ReqGetDescriptor (void) {
           pD = (U8 *)USBD_StringDescriptor;
 
 #if 0
+          // If unique USB IDs are required implement get_uid_string_interface()
+          // and get_len_string_interface(). See example at
+          //   https://github.com/mbedmicro/CMSIS-DAP/blob/master/interface/Common/src/version.c
             // added by sam to send unique id string descriptor
           if (USBD_SetupPacket.wValueL == 3) {
               USBD_EP0Data.pData = get_uid_string_interface();

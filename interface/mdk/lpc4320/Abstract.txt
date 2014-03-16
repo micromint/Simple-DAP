@@ -1,3 +1,4 @@
 CMSIS-DAP USB HID Firmware for NXP LPC4320/LPC4330/LPC4370
 Tested with these boards:
   NXP LPC-Link 2
+    BOARD_LPCLINK_2

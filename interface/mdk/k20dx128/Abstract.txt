@@ -1,3 +1,4 @@
 CMSIS-DAP USB HID Firmware for Freescale MK20DX128VLH5
 Tested with these boards:
-  Freescale Freedom K20D50M (untested)
+  Freescale Freedom K20D50M
+    BOARD_FRDM_K20D50M  (untested)
