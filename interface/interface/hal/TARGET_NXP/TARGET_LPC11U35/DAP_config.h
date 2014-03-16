@@ -110,10 +110,21 @@ Provides definitions about:
 
 // // Debug Port I/O Pins
 // LPC11U35/501
+#if defined(BOARD_EA_LPC11U35)
 // SWCLK/TCK Pin                PIO0_11
 #define PIN_SWCLK_TCK_PORT      0
 #define PIN_SWCLK_TCK_BIT       11
 #define PIN_SWCLK_TCK_IOCON     LPC_IOCON->TDI_PIO0_11
+#define FUNC_SWCLK              1
+
+#else // Default is mbed HDK reference design
+// SWCLK/TCK Pin                PIO0_7
+#define PIN_SWCLK_TCK_PORT      0
+#define PIN_SWCLK_TCK_BIT       7
+#define PIN_SWCLK_TCK_IOCON     LPC_IOCON->PIO0_7
+#define FUNC_SWCLK              0
+
+#endif
 
 // SWDIO/TMS Pin                PIO0_8
 #define PIN_SWDIO_TMS_PORT      0
@@ -142,6 +153,7 @@ Provides definitions about:
 
 // Debug Unit LEDs
 
+#if defined(BOARD_EA_LPC11U35)
 // Connected LED                PIO0_7
 #define LED_CONNECTED_PORT      0
 #define LED_CONNECTED_BIT       7
@@ -152,6 +164,18 @@ Provides definitions about:
 #define LEDRUNNING_CONNECTED_BIT       22
 #define LEDRUNNING_CONNECTED_IOCON     LPC_IOCON->PIO0_22
 
+#else // Default is mbed HDK reference design
+// Connected LED (green)        PIO0_21
+#define LED_CONNECTED_PORT      0
+#define LED_CONNECTED_BIT       21
+#define LED_CONNECTED_IOCON     LPC_IOCON->PIO0_21
+
+// Target Running LED (red)            PIO0_20
+#define LEDRUNNING_CONNECTED_PORT      0
+#define LEDRUNNING_CONNECTED_BIT       20
+#define LEDRUNNING_CONNECTED_IOCON     LPC_IOCON->PIO0_20
+
+#endif
 
 //**************************************************************************************************
 /** 
@@ -432,7 +456,7 @@ static __inline void DAP_SETUP (void) {
     LPC_SYSCON->SYSAHBCLKCTRL |= (1UL << 6);
 
     /* Configure I/O pins																				 */	
-	PIN_SWCLK_TCK_IOCON = FUNC_1 | PULL_UP_ENABLED;  /* SWCLK/TCK */
+	PIN_SWCLK_TCK_IOCON = FUNC_SWCLK | PULL_UP_ENABLED;  /* SWCLK/TCK */
 	PIN_SWDIO_TMS_IOCON = FUNC_0 | PULL_UP_ENABLED;  /* SWDIO/TMS */
 	PIN_TDI_IOCON       = FUNC_0 | PULL_UP_ENABLED;  /* TDI:      */
 	PIN_TDO_IOCON       = FUNC_0 | PULL_UP_ENABLED;  /* TDO:      */
