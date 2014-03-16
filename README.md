@@ -21,7 +21,7 @@ Documentation
 -------------
 * [Porting CMSIS-DAP to new boards](http://mbed.org/handbook/cmsis-dap-interface-firmware)
 
-This mbed-DAP project does not include the bootloader or flash algoriths. References to those or to the Python tools from the mbed CMSIS-DAP project are not applicable.
+This mbed-DAP project does not include the bootloader or flash algorithms. References to those or to the Python tools from the mbed CMSIS-DAP project are not applicable.
 
 References
 ----------
