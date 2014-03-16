@@ -1,13 +1,13 @@
 mbed CMSIS-DAP
 ==============
-A subset of the mbed CMSIS-DAP project that implements a USB CMSIS-DAP interface for debugging.
+A subset of the mbed CMSIS-DAP project that implements a USB CMSIS-DAP interface on ARM Cortex-M microcontrollers for debugging ARM targets.
 
-This project is a simpler DAP-only implementation does not include the USB MSD flash filesystem, USB CDC serial interface and Keil RTX RTOS. It can be useful for testing your DAP logic before implementing a new mbed CMSIS-DAP interface or for implementing a standalone CMSIS-DAP debugger.
+This project is a simpler DAP-only implementation does not include the USB MSD flash filesystem, target flash algorithms, USB CDC serial interface, USB bootloader and Keil RTX RTOS. It can be useful for testing your DAP logic before implementing a new mbed CMSIS-DAP interface or for implementing a standalone CMSIS-DAP debugger.
 
 The mbed code is licensed under the permissive Apache 2.0 licence, so you can use it in both commercial and personal projects with confidence. This license also applies to the USB device stack.
 
-Supported Interface Microcontrollers
-------------------------------------
+Supported Interface MCUs
+------------------------
 NXP:
 
 * [LPC11U35] (http://www.nxp.com/products/microcontrollers/cortex_m0_m0/lpc1100/series/LPC11U00.html) (Cortex-M0)
@@ -16,6 +16,12 @@ NXP:
 Freescale:
 
 * [K20DX128] (http://www.freescale.com/webapp/sps/site/taxonomy.jsp?code=K20_USB_MCU) (Cortex-M4) (untested)
+
+Documentation
+-------------
+* [Porting CMSIS-DAP to new boards](http://mbed.org/handbook/cmsis-dap-interface-firmware)
+
+This mbed-DAP project does not include the bootloader or flash algoriths. References to those or to the Python tools from the mbed CMSIS-DAP project are not applicable.
 
 References
 ----------
