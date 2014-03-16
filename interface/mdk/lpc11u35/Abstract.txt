@@ -1,0 +1,4 @@
+CMSIS-DAP USB HID Firmware for NXP LPC11U35
+Tested with these boards:
+  Embedded Artists LPC11U35 QuickStart
+  Micromint Bambino 210/210E
