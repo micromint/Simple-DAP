@@ -1,8 +1,8 @@
-mbed CMSIS-DAP
-==============
+mbed-DAP
+========
 A subset of the mbed CMSIS-DAP project that implements a USB CMSIS-DAP interface on ARM Cortex-M microcontrollers for debugging ARM targets.
 
-This project is a simpler DAP-only implementation does not include the USB MSD flash filesystem, target flash algorithms, USB CDC serial interface, USB bootloader and Keil RTX RTOS. It can be useful for testing your DAP logic before implementing a new mbed CMSIS-DAP interface or for implementing a standalone CMSIS-DAP debugger.
+This project is a simpler DAP-only implementation does not include the USB MSD flash filesystem, target flash algorithms, USB CDC serial interface, USB bootloader and Keil RTX RTOS. It can be useful for testing your DAP logic before implementing a new mbed CMSIS-DAP interface or for developing a standalone CMSIS-DAP debugger.
 
 The mbed code is licensed under the permissive Apache 2.0 licence, so you can use it in both commercial and personal projects with confidence. This license also applies to the USB device stack.
 
