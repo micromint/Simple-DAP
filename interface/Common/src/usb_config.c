@@ -120,7 +120,11 @@
 //         <o12.0..15> Maximum Feature Report Size (in bytes) <1-65535>
 //       </h>
 //     </e>
+#if !defined(CONF_DAP)
+#define USBD_HID_ENABLE             0
+#else
 #define USBD_HID_ENABLE             1
+#endif
 #define USBD_HID_EP_INTIN           1
 #define USBD_HID_EP_INTOUT          1
 #define USBD_HID_WMAXPACKETSIZE     64
@@ -276,7 +280,11 @@
 //            <256=> 256 Bytes <512=> 512 Bytes <1024=> 1024 Bytes
 //       </h>
 //     </e>
+#if !defined(CONF_CDC)
 #define USBD_CDC_ACM_ENABLE             0
+#else
+#define USBD_CDC_ACM_ENABLE             1
+#endif
 #define USBD_CDC_ACM_EP_INTIN           3
 #define USBD_CDC_ACM_WMAXPACKETSIZE     16
 #define USBD_CDC_ACM_BINTERVAL          32
@@ -398,8 +406,8 @@
 #define USBD_ADC_CIF_NUM           (0)
 #define USBD_ADC_SIF1_NUM          (1)
 #define USBD_ADC_SIF2_NUM          (2)
-#define USBD_CDC_CIF_NUM           (USBD_ADC_ENABLE*2+0)
-#define USBD_CDC_DIF_NUM           (USBD_ADC_ENABLE*2+1)
+#define USBD_CDC_ACM_CIF_NUM       (USBD_ADC_ENABLE*2+0)
+#define USBD_CDC_ACM_DIF_NUM       (USBD_ADC_ENABLE*2+1)
 #define USBD_HID_IF_NUM            (USBD_ADC_ENABLE*2+USBD_CDC_ACM_ENABLE*2)
 #define USBD_MSC_IF_NUM            (USBD_ADC_ENABLE*2+USBD_CDC_ACM_ENABLE*2+USBD_HID_ENABLE)
 
